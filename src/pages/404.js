@@ -1,13 +1,16 @@
 import React from "react"
 
-import Layout from "../components/layout"
-import SEO from "../components/seo"
+import Layout from "../partials/layout"
+import Section from "../components/section"
+import Markdown from '../components/markdown'
+
+const html = '<p><strong>Error 404: Pagina niet gevonden</stong></p>'
 
 const NotFoundPage = () => (
-  <Layout>
-    <SEO title="404: Not found" />
-    <h1>NOT FOUND</h1>
-    <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
+  <Layout title="Pagina niet gevonden" >
+    <Section>
+      <Markdown html={html} />
+    </Section>
   </Layout>
 )
 

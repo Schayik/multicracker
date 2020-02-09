@@ -1,21 +1,49 @@
 import React from "react"
-import { Link } from "gatsby"
+import { graphql } from 'gatsby'
 
-import Layout from "../components/layout"
-import Image from "../components/image"
-import SEO from "../components/seo"
+import Layout from "../partials/layout"
+import Section from '../components/section'
+import Markdown from '../components/markdown'
+import BladeButton from '../components/blade-button'
+import Columns from '../components/columns'
 
-const IndexPage = () => (
-  <Layout>
-    <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-    <Link to="/page-2/">Go to page 2</Link>
+import ApplicationsIcon from '../icons/applications'
+import ModelsIcon from '../icons/models'
+
+const CustomFlagText = (
+  <h1>Fijn snijden terwijl de structuur en<br />scherpte worden behouden</h1>
+)
+
+const IndexPage = ({ data, ...props }) => (
+  <Layout 
+    isHome 
+    CustomFlagText={CustomFlagText}
+    {...props}
+  >
+    <Section>
+      <Columns amount={3}>
+        <Markdown html={data.markdownRemark.html} />
+        <BladeButton 
+          to='/toepassingsgebieden' 
+          label='Toepassingsgebieden' 
+          Icon={ApplicationsIcon}
+        />
+        <BladeButton 
+          to='/modellen' 
+          label='Modellen' 
+          Icon={ModelsIcon}
+        />
+      </Columns>
+    </Section>
   </Layout>
 )
 
 export default IndexPage
+
+export const pageQuery = graphql`
+  query {
+    markdownRemark (fileAbsolutePath: { regex: "/home/" }) {
+      html
+    }
+  }
+`
