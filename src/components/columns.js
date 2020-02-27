@@ -36,19 +36,11 @@ const StyledThreeColumns = styled.div`
   ${StyledColumns}
   grid-template-columns: 1fr 1fr 1fr;
 
-  @media (max-width: ${p => p.theme.media.max}) {
+  @media (max-width: ${p => p.theme.media.xl}) {
     grid-template-columns: 1fr 1fr;
-    > :first-child { grid-column: 1 / 3; }
-    > a { max-width: 20rem; }
   }
 
-  @media (max-width: ${p => p.theme.media.max}) {
+  @media (max-width: ${p => p.theme.media.medium}) {
     grid-template-columns: 1fr;
-    > :first-child { grid-column: 1 / 2; }
-    > a { 
-      width: 20rem;
-      max-width: 100%;
-      margin: 0 auto;
-    }
   }
 `

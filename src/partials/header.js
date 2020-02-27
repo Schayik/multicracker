@@ -78,28 +78,33 @@ const StyledHeader = styled.header`
     
   }
 
-  @media (max-width: 1439px) {
+  @media (max-width: ${p => p.theme.media.max}) {
+    .wrapper .flag { padding-left: ${p => p.theme.margin.large}; }
+  }
+
+  @media (max-width: ${p => p.theme.media.xl}) {
     .wrapper .flag {
-      padding-left: 5rem;
+      padding-left: calc(0.5 * (100vw - ${p => p.theme.media.large}) + ${p => p.theme.margin.large});
     }
   }
-  @media (max-width: 767px) {
+
+  @media (max-width: ${p => p.theme.media.large}) {
     .wrapper {
       height: 8rem;
-    }
-    .wrapper .flag h1 {
-      font-size: 2rem;
+      .flag {
+        padding-left: ${p => p.theme.margin.large};
+        h1 { font-size: 2rem; }
+      }
     }
   }
-  @media (max-width: 575px) {
+
+  @media (max-width: ${p => p.theme.media.medium}) {
     .wrapper {
-      height: 6rem;
-    }
-    .wrapper .flag {
-      padding-left: 2rem;
-    }
-    .wrapper .flag h1 {
-      font-size: 1.5rem;
+      height: 5rem;
+      .flag {
+        padding-left: calc(0.5 * (100vw - ${p => p.theme.media.xs}) + ${p => p.theme.margin.small});
+        h1 { font-size: 1.25rem; }
+      }
     }
   }
 `

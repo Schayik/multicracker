@@ -1,4 +1,5 @@
 import React from "react"
+import styled from 'styled-components'
 import { graphql } from 'gatsby'
 
 import Layout from "../partials/layout"
@@ -22,7 +23,7 @@ const IndexPage = ({ data, ...props }) => (
   >
     <Section>
       <Columns amount={3}>
-        <Markdown html={data.markdownRemark.html} />
+        <StyledMarkdown as={Markdown} html={data.markdownRemark.html} />
         <BladeButton 
           to='/toepassingsgebieden' 
           label='Toepassingsgebieden' 
@@ -45,5 +46,14 @@ export const pageQuery = graphql`
     markdownRemark (fileAbsolutePath: { regex: "/home/" }) {
       html
     }
+  }
+`
+
+const StyledMarkdown = styled.div`
+  @media (max-width: ${p => p.theme.media.xl}) {
+    grid-column: 1 / 3;
+  }
+  @media (max-width: ${p => p.theme.media.medium}) {
+    grid-column: 1 / 2;
   }
 `

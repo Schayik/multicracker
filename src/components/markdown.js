@@ -1,8 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 
-const Markdown = ({ html }) => (
-  <StyledMarkdown dangerouslySetInnerHTML={{ __html: html }} />
+const Markdown = ({ html, ...props }) => (
+  <StyledMarkdown {...props} dangerouslySetInnerHTML={{ __html: html }} />
 )
 
 export default Markdown

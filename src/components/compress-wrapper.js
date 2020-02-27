@@ -16,7 +16,12 @@ const StyledCompress = styled.div`
   height: 100%;
   width: 100%;
 
-  @media (max-width: ${p => p.theme.media.small}px) {
+  @media (max-width: ${p => p.theme.media.xl}) {
+    max-width: ${p => p.theme.media.medium};
+  }
+
+  @media (max-width: ${p => p.theme.media.medium}) {
+    max-width: ${p => p.theme.media.xs};
     padding: 0 ${p => p.theme.margin.small};
   }
 `

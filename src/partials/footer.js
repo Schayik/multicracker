@@ -61,28 +61,20 @@ const StyledFooter = styled.footer`
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-gap: 2.5rem;
-  }
-  @media (max-width: 1199px) {
-    .content {
-      grid-template-columns: 1fr 1fr 1fr;
-    }
-  }
-  @media (max-width: 991px) {
-    .content {
+    @media (max-width: ${p => p.theme.media.xl}) {
       grid-template-columns: 1fr 1fr;
     }
-  }
-  @media (max-width: 575px) {
-    .content {
+    @media (max-width: ${p => p.theme.media.medium}) {
       grid-template-columns: 1fr;
     }
   }
+
+
   .content a {
     position: relative;
     flex: 1 0 280px;
     padding: 8px 1.25rem 0 1.25rem;
     height: 6.25rem;
-    max-width: 20rem;
     display: flex;
     align-items: center;
   }
