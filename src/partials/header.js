@@ -79,12 +79,12 @@ const StyledHeader = styled.header`
   }
 
   @media (max-width: ${p => p.theme.media.max}) {
-    .wrapper .flag { padding-left: ${p => p.theme.margin.large}; }
+    .wrapper .flag { padding-left: calc(0.5 * (100vw - ${p => p.theme.media.xl}) + ${p => p.theme.margin.large}); }
   }
 
   @media (max-width: ${p => p.theme.media.xl}) {
     .wrapper .flag {
-      padding-left: calc(0.5 * (100vw - ${p => p.theme.media.large}) + ${p => p.theme.margin.large});
+      padding-left: calc(0.5 * (100vw - ${p => p.theme.media.medium}) + ${p => p.theme.margin.large});
     }
   }
 
@@ -92,7 +92,6 @@ const StyledHeader = styled.header`
     .wrapper {
       height: 8rem;
       .flag {
-        padding-left: ${p => p.theme.margin.large};
         h1 { font-size: 2rem; }
       }
     }
@@ -106,6 +105,10 @@ const StyledHeader = styled.header`
         h1 { font-size: 1.25rem; }
       }
     }
+  }
+
+  @media (max-width: ${p => p.theme.media.xs}) {
+    .wrapper .flag { padding-left: ${p => p.theme.margin.small}; }
   }
 `
 

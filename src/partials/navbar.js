@@ -104,11 +104,14 @@ const StyledNavBar = styled.nav`
   ul.small { display: none; }
   @media (max-width: ${p => p.theme.media.xl}) {
     ul.big { display: none; }
+  }
+  /* @media (max-width: ${p => p.theme.media.xl}) {
+    ul.big { display: none; }
     ul.small { display: flex; }
   }
   @media (max-width: ${p => p.theme.media.large}) {
     ul.small { display: none; }
-  }
+  } */
 `
 
 export default NavBar

@@ -37,7 +37,7 @@ export default BladeButton
 const StyledButton = styled.button`
 
   position: relative;
-  height: 12.5rem;
+  height: 200px;
   display: flex;
   flex-direction: column;
   justify-content: center;

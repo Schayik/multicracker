@@ -17,7 +17,7 @@ const THEME = {
     xs: '425px',
   },
   margin: {
-    large: '5rem',
+    large: '2.5rem',
     small: '2rem',
   },
 }

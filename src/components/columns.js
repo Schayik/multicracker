@@ -30,6 +30,10 @@ const StyledTwoColumns = styled.div`
   ${StyledColumns}
 
   grid-template-columns: 1fr 1fr;
+
+  @media (max-width: ${p => p.theme.media.medium}) {
+    grid-template-columns: 1fr;
+  }
 `
 
 const StyledThreeColumns = styled.div`

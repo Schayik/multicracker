@@ -97,7 +97,7 @@ const StyledMenu = styled.div`
   }
 
   display: none;
-  @media (max-width: ${p => p.theme.media.large}) {
+  @media (max-width: ${p => p.theme.media.xl}) {
     display: flex;
   }
 

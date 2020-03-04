@@ -61,6 +61,9 @@ const StyledFooter = styled.footer`
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-gap: 2.5rem;
+    @media (max-width: ${p => p.theme.media.max}) {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
     @media (max-width: ${p => p.theme.media.xl}) {
       grid-template-columns: 1fr 1fr;
     }
@@ -74,7 +77,7 @@ const StyledFooter = styled.footer`
     position: relative;
     flex: 1 0 280px;
     padding: 8px 1.25rem 0 1.25rem;
-    height: 6.25rem;
+    height: 100px;
     display: flex;
     align-items: center;
   }

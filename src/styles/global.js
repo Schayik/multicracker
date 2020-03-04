@@ -8,11 +8,23 @@ const GlobalStyle = createGlobalStyle`
 
   html {
     scroll-behavior: smooth;
-    @media (max-width: ${p => p.theme.media.max}px) {
+    /* @media (max-width: ${p => p.theme.media.max}) {
       font-size: 90%;
     }
-    @media (max-width: ${p => p.theme.media.small}px) {
-      font-size: 70%;
+    @media (max-width: ${p => p.theme.media.xl}) {
+      font-size: 100%;
+    }
+    @media (max-width: ${p => p.theme.media.large}) {
+      font-size: 90%;
+    }
+    @media (max-width: ${p => p.theme.media.medium}) {
+      font-size: 100%;
+    } */
+    @media (max-width: ${p => p.theme.media.small}) {
+      font-size: 90%;
+    }
+    @media (max-width: ${p => p.theme.media.xs}) {
+      font-size: 80%;
     }
   }
 
