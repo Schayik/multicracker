@@ -31,13 +31,6 @@ module.exports = {
         path: `${__dirname}/src/markdown`,
       },
     },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `models`,
-        path: `${__dirname}/src/models`,
-      },
-    },
     // {
     //   resolve: `gatsby-plugin-prefetch-google-fonts`,
     //   options: {
