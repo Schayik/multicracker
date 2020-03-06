@@ -34,6 +34,16 @@ export const pageQuery = graphql`
         }
       }
     }
+    modelsJson(path: { eq: $path }) {
+      id
+      name
+      length
+      width
+      height
+      weight
+      power
+      capacity
+    }
   }
 `
 
