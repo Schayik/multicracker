@@ -6,17 +6,17 @@ import AbsImg from '../components/absolute-image'
 const Header = ({ title, CustomFlagText, fluid, isHome = false }) => (
   <StyledHeader className={isHome ? '' : 'not-home'} >
     <AbsImg fluid={fluid} />
-    {isHome && <div class='spacer' />}
-    {!isHome && <div class='overlay' />}
-    <div class='wrapper'>
-      <div class='flag'>
+    {isHome && <div className='spacer' />}
+    {!isHome && <div className='overlay' />}
+    <div className='wrapper'>
+      <div className='flag'>
         {CustomFlagText || <h1>{title}</h1>}   
       </div>
       <svg viewBox='0 0 1 1'>
         <polygon points='0,0 1,0 0,1' />
       </svg>
     </div>
-    {!isHome && <div class='spacer' />}
+    {!isHome && <div className='spacer' />}
   </StyledHeader>
 )
 

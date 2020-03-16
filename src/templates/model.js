@@ -2,13 +2,16 @@ import React from "react"
 import { graphql } from "gatsby"
 
 import Layout from "../partials/layout"
+import Section from '../components/section'
 
 const Model = ({ data, ...props }) => (
   <Layout {...props}
     title={data.markdownRemark.frontmatter.title}
     headerHeight='31.25rem'
   >
-    {JSON.stringify(data)}
+    <Section>
+      {JSON.stringify(data)}
+    </Section>
     {/* <Section>
       <Markdown html={data.markdownRemark.html} />
       <Buttons buttons={buttons} />
@@ -25,6 +28,14 @@ export const pageQuery = graphql`
       frontmatter {
         path
         title
+        type
+        model
+        length
+        width
+        height
+        weight
+        power
+        capacity
         featuredImage {
           childImageSharp {
             fixed(width: 300) {
@@ -33,16 +44,6 @@ export const pageQuery = graphql`
           }
         }
       }
-    }
-    modelsJson(path: { eq: $path }) {
-      id
-      name
-      length
-      width
-      height
-      weight
-      power
-      capacity
     }
   }
 `

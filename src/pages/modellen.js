@@ -1,25 +1,23 @@
 import React from "react"
-import { graphql, Link } from 'gatsby'
+import { graphql } from 'gatsby'
+import { orderBy } from 'lodash'
 
 import Layout from "../partials/layout"
 import Section from '../components/section'
+import Models from '../components/models'
 
-const Modellen = ({ data, ...props }) => (
-  <Layout title='Modellen' {...props}>
-    <Section>
-      {JSON.stringify(data)}
-      <ul>
-        {data.allMarkdownRemark.edges.map(({ node }) => (
-          <li key={node.id}>
-            <Link to={node.frontmatter.path}>
-              {node.frontmatter.title}
-            </Link>
-          </li>
-        ))}
-      </ul>
-    </Section>
-  </Layout>
-)
+const Modellen = ({ data, ...props }) => {
+
+  const orderedModels = orderBy(data.allMarkdownRemark.edges, ['node.frontmatter.type', 'node.frontmatter.model'], ['desc', 'asc'])
+
+  return (
+    <Layout title='Modellen' {...props}>
+      <Section>
+        <Models models={orderedModels} />
+      </Section>
+    </Layout>
+  )
+}
 
 export default Modellen
 
@@ -30,12 +28,19 @@ export const pageQuery = graphql`
         node {
           id
           frontmatter {
-            title
             path
-            date
+            title
+            type
+            model
+            length
+            width
+            height
+            weight
+            power
+            capacity
             featuredImage {
               childImageSharp {
-                fixed(width: 300) {
+                fixed(width: 400, fit: CONTAIN) {
                   ...GatsbyImageSharpFixed
                 }
               }

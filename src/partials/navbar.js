@@ -24,7 +24,7 @@ const linksSmall = [
 const Links = ({ pathname, links, ...props }) => (
   <ul {...props}>
     {links.map(link => (
-      <li className={pathname === withPrefix(link.link) ? 'active' : ''}>
+      <li key={link.link} className={pathname === withPrefix(link.link) ? 'active' : ''}>
         <Link to={link.link}>
           {link.label}
         </Link>

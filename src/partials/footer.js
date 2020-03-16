@@ -13,7 +13,7 @@ const Footer = ({ fluid }) => (
     <CompressWrapper>
       <div className='content'>
         {links.map(link => (
-          <a href={link.link} target='_blank' rel="noopener noreferrer">
+          <a key={link.link} href={link.link} target='_blank' rel="noopener noreferrer">
             <Shape isFilled />
             <link.Icon className='icon' />
             <p><strong>{link.label}</strong><br />{link.text}</p>
