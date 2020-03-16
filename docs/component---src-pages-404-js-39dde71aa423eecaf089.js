@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[3],{w2l6:function(e,n,t){"use strict";t.r(n);var a=t("q1tI"),o=t.n(a),r=t("oIa3"),i=t("rxcZ"),c=t("pOuo");n.default=function(){return o.a.createElement(r.a,{title:"Pagina niet gevonden"},o.a.createElement(i.a,null,o.a.createElement(c.a,{html:"<p><strong>Error 404: Pagina niet gevonden</stong></p>"})))}}}]);
+//# sourceMappingURL=component---src-pages-404-js-39dde71aa423eecaf089.js.map
