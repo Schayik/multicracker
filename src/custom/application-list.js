@@ -34,9 +34,9 @@ const applications = [
 const ApplicationList = () => (
   <StyledList>
     {applications.map(application => (
-      <div class='application'>
+      <div key={application.label} className='application'>
         <application.Icon />
-        <div class='text'>
+        <div className='text'>
           <h2>{application.label}</h2>
           <ul>
             {application.list.map(item => (

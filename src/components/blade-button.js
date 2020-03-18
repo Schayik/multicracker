@@ -22,7 +22,7 @@ const BladeButton = ({ label, Icon, ...props }) => {
       <AbsImg fluid={data.file.childImageSharp.fluid} />
       <Icon className='icon' />
       <p>{label}</p>
-      <div class='overlay' />
+      <div className='overlay' />
       <svg className='overlap' viewBox='0 0 1 1' preserveAspectRatio="none">
         <polygon points='0,0 1,1 0,1' fill='white' />
       </svg>

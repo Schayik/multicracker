@@ -7,8 +7,8 @@ import Columns from '../components/columns'
 import ContactLocation from '../custom/contact-location'
 import ContactLinks from '../custom/contact-links'
 
-const IndexPage = ({ data, ...props }) => (
-  <Layout title='Het Snijproces' {...props}>
+const Contact = props => (
+  <Layout title='Contact' {...props}>
     <Section>
       <Columns>
         <ContactLocation />
@@ -18,4 +18,4 @@ const IndexPage = ({ data, ...props }) => (
   </Layout>
 )
 
-export default IndexPage
+export default Contact
