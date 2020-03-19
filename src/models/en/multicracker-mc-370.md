@@ -1,8 +1,8 @@
 ---
-path: /modellen/multicracker-mc-370
+path: /models/multicracker-mc-370
 date: 2019-01-18
 title: Multicracker MC 370
-featuredImage: ./images/mc370.png
+featuredImage: ../images/mc370.png
 
 type: mc
 model: 370

@@ -11,7 +11,7 @@ const applications = [
   {
     "label": "Granen",
     Icon: CerealIcon,
-    "list": ["Maïs", "Tarwe", "Haver", "Gerst (ook voor debierbrouwende industrie!)"]
+    "list": ["Maïs", "Tarwe", "Haver", "Gerst (ook voor de bierbrouwende industrie!)"]
   },
   {
     "label": "Oliehoudende zaden",
@@ -62,6 +62,7 @@ const StyledList = styled.div`
     &:not(:first-child) { margin-top: 40px; }
 
     svg {
+      flex-shrink: 0;
       width: 2.5rem;
       height: 2.5rem;
     }
