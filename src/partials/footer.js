@@ -3,31 +3,36 @@ import styled from 'styled-components'
 
 import CompressWrapper from '../components/compress-wrapper'
 import AbsImg from '../components/absolute-image'
+import useIsEN from '../hooks/useIsEN'
 
 import { links, location } from '../data/footer-contact-links'
 
-const Footer = ({ fluid }) => (
-  <StyledFooter>
-    <AbsImg fluid={fluid} />
-    <div className='overlay'></div>
-    <CompressWrapper>
-      <div className='content'>
-        {links.map(link => (
-          <a key={link.link} href={link.link} target='_blank' rel="noopener noreferrer">
-            <Shape isFilled />
-            <link.Icon className='icon' />
-            <p><strong>{link.label}</strong><br />{link.text}</p>
+const Footer = ({ fluid }) => {
+  const isEN = useIsEN()
+  
+  return (
+    <StyledFooter>
+      <AbsImg fluid={fluid} />
+      <div className='overlay'></div>
+      <CompressWrapper>
+        <div className='content'>
+          {links.map(link => (
+            <a key={link.link} href={link.link} target='_blank' rel="noopener noreferrer">
+              <Shape isFilled />
+              <link.Icon className='icon' />
+              <p><strong>{(isEN && link.labelEN) ? link.labelEN : link.label}</strong><br />{link.text}</p>
+            </a>
+          ))}
+          <a className='open' target='_blank' rel="noopener noreferrer" href={location.link}>
+            <Shape />
+            <location.FooterIcon className='icon' />
+            <location.FooterText isEN={isEN} />
           </a>
-        ))}
-        <a className='open' target='_blank' rel="noopener noreferrer" href={location.link}>
-          <Shape />
-          <location.FooterIcon className='icon' />
-          <location.FooterText />
-        </a>
-      </div>
-    </CompressWrapper>
-  </StyledFooter>
-)
+        </div>
+      </CompressWrapper>
+    </StyledFooter>
+  )
+}
 
 export default Footer
 

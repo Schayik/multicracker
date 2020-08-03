@@ -5,35 +5,9 @@ import { Link, useStaticQuery, graphql, withPrefix } from "gatsby"
 
 import Menu from './menu'
 import CompressWrapper from '../components/compress-wrapper'
+import pagesObject from '../data/pages'
 
-
-const links = [
-  { link: "/toepassingsgebieden", label: "Toepassingsgebieden" },
-  { link: "/modellen", label: "Modellen" },
-  { link: "/snijproces", label: "Het snijproces" },
-  { link: "/contact", label: "Contact" }
-]
-
-const linksSmall = [
-  { link: "/toepassingsgebieden", label: "Toepassingen" },
-  { link: "/modellen", label: "Modellen" },
-  { link: "/snijproces", label: "Snijproces" },
-  { link: "/contact", label: "Contact" }
-]
-
-const Links = ({ pathname, links, ...props }) => (
-  <ul {...props}>
-    {links.map(link => (
-      <li key={link.link} className={pathname === withPrefix(link.link) ? 'active' : ''}>
-        <Link to={link.link}>
-          {link.label}
-        </Link>
-      </li>
-    ))}
-  </ul>
-)
-
-const NavBar = ({ pathname }) => {
+const NavBar = ({ pathname, locale, pageKey, modelData }) => {
   const data = useStaticQuery(graphql`
     query {
       file(relativePath: {eq: "logo.png"}) {
@@ -53,12 +27,46 @@ const NavBar = ({ pathname }) => {
     <StyledNavBar>
       <CompressWrapper>
         <div className='content'>
-          <Link to='/' className='logo'>
+          <Link to={locale === 'nl' ? pagesObject.home.nl.path : pagesObject.home.en.path} className='logo'>
             <Img fluid={data.file.childImageSharp.fluid} className='image' />
           </Link>
-          <Links className='big' pathname={pathname} links={links} />
-          <Links className='small' pathname={pathname} links={linksSmall} />
-          <Menu links={links} />
+
+          <ul className='big navbar-list'>
+            {Object.keys(pagesObject).map(linkKey => {
+              if (linkKey === 'home') return null
+              const { path, label } = pagesObject[linkKey][locale]
+              return (
+                <li key={linkKey} className={pathname === withPrefix(path) ? 'active' : ''}>
+                  <Link to={path}>
+                    {label}
+                  </Link>
+                </li>
+              )
+            })}
+            <div className='divider' />
+            {locale === 'en' && 
+              <li>
+                <Link to={modelData ? modelData.markdownRemark.frontmatter.pathNL : pagesObject[pageKey].nl.path}>
+                  Nederlands
+                </Link>
+              </li>
+            }
+            {locale === 'nl' && 
+              <li>
+                <Link to={modelData ? modelData.markdownRemark.frontmatter.pathEN : pagesObject[pageKey].en.path}>
+                  English
+                </Link>
+              </li>
+            }            
+          </ul>
+          {/* <Links className='big' links={links} /> */}
+          {/* <Links className='small' pathname={pathname} links={linksSmall} /> */}
+          <Menu 
+            pathname={pathname}
+            locale={locale} 
+            pageKey={pageKey} 
+            modelData={modelData}
+          />
         </div>
       </CompressWrapper>
     </StyledNavBar>
@@ -79,16 +87,21 @@ const StyledNavBar = styled.nav`
     justify-content: space-between;
   }
 
+  .divider {
+    margin-left: 2rem;
+    border: 1px solid ${p => p.theme.colors.black};
+  }
+
   a.logo .image {
     width: 14rem;
   }
 
-  ul.big, ul.small {
+  ul.big, ul.small, ul.navbar-list {
     display: flex;
     padding: 0;
             
     li {
-      margin-left: 3.75rem;
+      margin-left: 2rem;
       a {
         font-size: 1.25rem;
         font-weight: bold;

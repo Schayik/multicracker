@@ -6,51 +6,59 @@ import Img from 'gatsby-image'
 import Dimensions from '../icons/dimensions'
 import Power from '../icons/power'
 import Weight from '../icons/weight'
+import useIsEN from '../hooks/useIsEN'
 
-const Models = ({ models }) => (
-  <StyledModels>
-    {models.map(({ node }) => {
-      const { type, path, title, length, width, height, weight, power, capacity, featuredImage } = node.frontmatter
+const Models = ({ models }) => {
+  const isEN = useIsEN()
 
-      if (type === 'ac') {
-        return (
-          <Link key={node.id} to={path} className='model double'>
-            <div className='inner'>
-              <div className='double-item left'>
+  return (
+    <StyledModels>
+      {models.map(({ node }) => {
+        const { type, path, title, length, width, height, weight, power, capacity, featuredImage } = node.frontmatter
+
+        if (type === 'ac') {
+          return (
+            <Link key={node.id} to={path} className='model double'>
+              <div className='inner'>
+                <div className='double-item left'>
+                  <Img fixed={featuredImage.childImageSharp.fixed} style={{ flex: 1, width: '100%', height: '100%' }} imgStyle={{ objectFit: 'contain' }} />
+                  <p className='name'>{title}</p>
+                </div>
+                <div className='double-item right'>
+                  <div className='property-wrapper'>
+                    <Dimensions />
+                    <p>{length} ({isEN ? 'length' : 'lengte'})<br/>{width} ({isEN ? 'width' : 'breedte'})<br/>{height} ({isEN ? 'height' : 'hoogte'})</p>
+                  </div>
+                  <div className='property-wrapper'>
+                    <Weight />
+                    <p>{weight}</p>
+                  </div>
+                  <div className='property-wrapper'>
+                    <Power />
+                    <p>{power}</p>
+                  </div>
+                  {isEN
+                    ? <p>The capacity is <span>{capacity}</span>, depending on the product and the desirable product size.</p>
+                    : <p>De capaciteit is <span>{capacity}</span>, afhankelijk van het product en gewenste deeltjesgrootte.</p>
+                  }
+                </div>
+              </div>
+            </Link>
+          )
+        } else {
+          return (
+            <Link key={node.id} to={path} className='model'>
+              <div className='inner'>
                 <Img fixed={featuredImage.childImageSharp.fixed} style={{ flex: 1, width: '100%', height: '100%' }} imgStyle={{ objectFit: 'contain' }} />
                 <p className='name'>{title}</p>
               </div>
-              <div className='double-item right'>
-                <div className='property-wrapper'>
-                  <Dimensions />
-                  <p>{length} (lengte)<br/>{width} (breedte)<br/>{height} (hoogte)</p>
-                </div>
-                <div className='property-wrapper'>
-                  <Weight />
-                  <p>{weight}</p>
-                </div>
-                <div className='property-wrapper'>
-                  <Power />
-                  <p>{power}</p>
-                </div>
-                <p>De capiciteit is <span>{capacity}</span>, afhankelijk van het product en gewenste deeltjesgrootte.</p>
-              </div>
-            </div>
-          </Link>
-        )
-      } else {
-        return (
-          <Link key={node.id} to={path} className='model'>
-            <div className='inner'>
-              <Img fixed={featuredImage.childImageSharp.fixed} style={{ flex: 1, width: '100%', height: '100%' }} imgStyle={{ objectFit: 'contain' }} />
-              <p className='name'>{title}</p>
-            </div>
-          </Link>
-        )
-      }
-    })}
-  </StyledModels>
-)
+            </Link>
+          )
+        }
+      })}
+    </StyledModels>
+  )
+}
 
 export default Models
 

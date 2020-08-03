@@ -1,5 +1,9 @@
+---
+locale: nl
+---
 ## Waarom cracken (breken) in plaats van malen?
 Door het product te cracken wordt een gelijkmatige structuurgrootte bereikt. In het geval van diervoeding, heeft dit een positief effect op de spijsvertering van het dier.<br/>
+<br/>
 Door de snelle doorvoer in de machine, treedt geen opwarming van het product op. Hierdoor is er een minimaal vochtverlies en behoudt het eindproduct zijn voedingswaarde.<br/>
 <br/>
 

@@ -44,38 +44,37 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     createPage({
       path: node.frontmatter.path,
       component: markdownTemplate,
-      context: {}, // additional data can be passed via context
+      context: { locale: 'nl' }, // additional data can be passed via context
     })
   })
 
   result.data.en.edges.forEach(({ node }) => {
     createPage({
-      path: '/en' + node.frontmatter.path,
+      path: node.frontmatter.path,
       component: markdownTemplate,
-      context: {}, // additional data can be passed via context
+      context: { locale: 'en' }, // additional data can be passed via context
     })
   })
 
-  const normalPages = [
-    { template: path.resolve(`src/templates/index.js`), pathNL: '/', pathEN: '/en' },
-    { template: path.resolve(`src/templates/toepassingsgebieden.js`), pathNL: '/toepassingsgebieden', pathEN: '/en/areas-of-application' },
-    { template: path.resolve(`src/templates/snijproces.js`), pathNL: '/snijproces', pathEN: '/en/cutting-process' },
-    { template: path.resolve(`src/templates/modellen.js`), pathNL: '/modellen', pathEN: '/en/models' },
-    { template: path.resolve(`src/templates/contact.js`), pathNL: '/contact', pathEN: '/en/contact' },
-    { template: path.resolve(`src/templates/404.js`), pathNL: '/404', pathEN: '/en/404' },
-  ]
+  const pages = {
+    home: { template: path.resolve(`src/templates/index.js`), pathNL: '/', pathEN: '/en' },
+    applications: { template: path.resolve(`src/templates/toepassingsgebieden.js`), pathNL: '/toepassingen', pathEN: '/en/applications' },
+    models: { template: path.resolve(`src/templates/snijproces.js`), pathNL: '/snijproces', pathEN: '/en/process' },
+    snijprocess: { template: path.resolve(`src/templates/modellen.js`), pathNL: '/modellen', pathEN: '/en/models' },
+    contact: { template: path.resolve(`src/templates/contact.js`), pathNL: '/contact', pathEN: '/en/contact' },
+  }
 
-  normalPages.forEach(normalPage => {
+  Object.keys(pages).forEach(pageKey => {
     createPage({
-      path: normalPage.pathNL,
-      component: normalPage.template,
-      context: {}, // additional data can be passed via context
+      path: pages[pageKey].pathNL,
+      component: pages[pageKey].template,
+      context: { locale: 'nl', pageKey }, // additional data can be passed via context
     })
 
     createPage({
-      path: normalPage.pathEN,
-      component: normalPage.template,
-      context: {}, // additional data can be passed via context
+      path: pages[pageKey].pathEN,
+      component: pages[pageKey].template,
+      context: { locale: 'en', pageKey }, // additional data can be passed via context
     })
   })
 }

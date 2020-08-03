@@ -83,15 +83,10 @@ const StyledHeader = styled.header`
   }
 
   @media (max-width: ${p => p.theme.media.xl}) {
-    .wrapper .flag {
-      padding-left: calc(0.5 * (100vw - ${p => p.theme.media.medium}) + ${p => p.theme.margin.large});
-    }
-  }
-
-  @media (max-width: ${p => p.theme.media.large}) {
     .wrapper {
-      height: 8rem;
+      height: 8rem; 
       .flag {
+        padding-left: calc(0.5 * (100vw - ${p => p.theme.media.medium}) + ${p => p.theme.margin.large});
         h1 { font-size: 2rem; }
       }
     }

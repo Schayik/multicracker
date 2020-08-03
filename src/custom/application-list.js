@@ -7,7 +7,7 @@ import SeedIcon from '../icons/seed'
 import LegumelIcon from '../icons/legume'
 import EtceteraIcon from '../icons/etcetera'
 
-const applications = [
+const applicationsNL = [
   {
     "label": "Granen",
     Icon: CerealIcon,
@@ -27,28 +27,56 @@ const applications = [
     "label": "Overige",
     Icon: EtceteraIcon,
     "list": ["Left-overs van vis", "Pellets", "Groenten en fruit", "Zonnepitschroot"],
-    "extra": "Ook het verkruimelen van uw brok levert een prachtig resultaat!"
+    // "extra": "Ook het verkruimelen van uw brok levert een prachtig resultaat!"
   }
 ]
 
-const ApplicationList = () => (
-  <StyledList>
-    {applications.map(application => (
-      <div key={application.label} className='application'>
-        <application.Icon />
-        <div className='text'>
-          <h2>{application.label}</h2>
-          <ul>
-            {application.list.map(item => (
-              <li key={item}>{item}</li>
-            ))}
-          </ul>
-          {application.extra && <p>{application.extra}</p>}
+const applicationsEN = [
+  {
+    "label": "Grains",
+    Icon: CerealIcon,
+    "list": ["Corn", "Wheat", "Oats", "Barley (also for the brewing industry)"]
+  },
+  {
+    "label": "Oilseeds",
+    Icon: SeedIcon,
+    "list": ["Linseed", "Rapeseed"]
+  },
+  {
+    "label": "Legumes",
+    Icon: LegumelIcon,
+    "list": ["Soy", "Beans (including field beans)", "Peas"]
+  },
+  {
+    "label": "Other",
+    Icon: EtceteraIcon,
+    "list": ["Fish scraps", "Pellets", "Fruit and vegetables", "Sunflower seed residues"],
+    // "extra": "Ook het verkruimelen van uw brok levert een prachtig resultaat!"
+  }
+]
+
+const ApplicationList = ({ isEN }) => {
+  const list = isEN ? applicationsEN : applicationsNL
+
+  return (
+    <StyledList>
+      {list.map(application => (
+        <div key={application.label} className='application'>
+          <application.Icon />
+          <div className='text'>
+            <h2>{application.label}</h2>
+            <ul>
+              {application.list.map(item => (
+                <li key={item}>{item}</li>
+              ))}
+            </ul>
+            {application.extra && <p>{application.extra}</p>}
+          </div>
         </div>
-      </div>
-    ))}
-  </StyledList>
-)
+      ))}
+    </StyledList>
+  )
+}
 
 export default ApplicationList
 

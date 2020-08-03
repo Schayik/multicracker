@@ -10,7 +10,9 @@ import Footer from "./footer"
 import GlobalStyle from '../styles/global'
 import THEME from '../styles/theme'
 
-const Layout = ({ children, title, isHome, location, CustomFlagText }) => {
+const Layout = ({ children, title, isHome, location, CustomFlagText, pageContext, modelData }) => {
+  console.log(location)
+
   const data = useStaticQuery(graphql`
     query {
       site {
@@ -38,7 +40,7 @@ const Layout = ({ children, title, isHome, location, CustomFlagText }) => {
       <GlobalStyle />
       <Head title={title} />
       <StyledBody>
-        <NavBar siteTitle={data.site.siteMetadata.title} pathname={location && location.pathname} />
+        <NavBar siteTitle={data.site.siteMetadata.title} pathname={location.pathname} modelData={modelData} {...pageContext} />
         <Header title={title} isHome={isHome} CustomFlagText={CustomFlagText} fluid={fluid} />
         <main>{children}</main>
         <Footer fluid={fluid} />

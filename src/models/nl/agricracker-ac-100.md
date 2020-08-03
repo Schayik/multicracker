@@ -1,8 +1,12 @@
 ---
-path: /modellen/agricracker-ac-100
 date: 2019-01-18
 title: Agricracker® AC 100
 featuredImage: ../images/ac100.png
+
+
+locale: nl
+path: /modellen/agricracker-ac-100
+pathEN: /en/models/agricracker-ac-100
 
 type: ac
 model: 100

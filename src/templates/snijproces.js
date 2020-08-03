@@ -8,8 +8,8 @@ import Columns from '../components/columns'
 
 import Images from '../custom/snijproces-images'
 
-const IndexPage = ({ data, ...props }) => (
-  <Layout title='Het Snijproces' {...props}>
+const IndexPage = ({ data, pageContext, ...props }) => (
+  <Layout title={pageContext.locale === 'nl' ? 'Snijproces' : 'Process'} pageContext={pageContext} {...props}>
     <Section>
       <Columns>
         <div>
@@ -25,11 +25,11 @@ const IndexPage = ({ data, ...props }) => (
 export default IndexPage
 
 export const pageQuery = graphql`
-  query {
-    markdown1: markdownRemark(fileAbsolutePath: { regex: "/snijproces-1/" }) {
+  query($locale: String!) {
+    markdown1: markdownRemark(fileAbsolutePath: { regex: "/snijproces-1/" }, frontmatter: { locale: { eq: $locale } }) {
       html
     }
-    markdown2: markdownRemark(fileAbsolutePath: { regex: "/snijproces-2/" }) {
+    markdown2: markdownRemark(fileAbsolutePath: { regex: "/snijproces-2/" }, frontmatter: { locale: { eq: $locale } }) {
       html
     }
   }

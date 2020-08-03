@@ -1,8 +1,11 @@
 ---
-path: /models/multicracker-mc-11
 date: 2019-01-18
 title: Multicracker MC 11
 featuredImage: ../images/mc11.png
+
+locale: en
+path: /en/models/multicracker-mc-11
+pathNL: /modellen/multicracker-mc-11
 
 type: mc
 model: 11

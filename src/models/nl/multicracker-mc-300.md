@@ -1,8 +1,11 @@
 ---
-path: /modellen/multicracker-mc-300
 date: 2019-01-18
 title: Multicracker MC 300
 featuredImage: ../images/mc300.png
+
+locale: nl
+path: /modellen/multicracker-mc-300
+pathEN: /en/models/multicracker-mc-300
 
 type: mc
 model: 300

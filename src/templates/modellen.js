@@ -6,12 +6,11 @@ import Layout from "../partials/layout"
 import Section from '../components/section'
 import Models from '../components/models'
 
-const Modellen = ({ data, ...props }) => {
-
+const Modellen = ({ data, pageContext,  ...props }) => {
   const orderedModels = orderBy(data.allMarkdownRemark.edges, ['node.frontmatter.type', 'node.frontmatter.model'], ['desc', 'asc'])
 
   return (
-    <Layout title='Modellen' {...props}>
+    <Layout title={pageContext ? 'Modellen' : 'Models'} pageContext={pageContext} {...props}>
       <Section>
         <Models models={orderedModels} />
       </Section>
@@ -22,8 +21,11 @@ const Modellen = ({ data, ...props }) => {
 export default Modellen
 
 export const pageQuery = graphql`
-  query {
-    allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/models/" } }) {
+  query($locale: String!) {
+    allMarkdownRemark(filter: { 
+      frontmatter: { locale: { eq: $locale } } 
+      fileAbsolutePath: {regex: "//models//"}
+    }) {
       edges {
         node {
           id

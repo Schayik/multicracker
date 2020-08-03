@@ -1,21 +1,26 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Link } from 'gatsby'
+// import { Link } from 'gatsby'
 
 import { links } from '../data/footer-contact-links'
+import useIsEN from '../hooks/useIsEN'
 
-const ContactLinks = () => (
-  <StyledLinks>
-    {links.map(link => (
-      <li key={link.link}>
-        <Link to={link.link}>
-          <link.Icon />
-          <p><strong>{link.label}</strong><br/>{link.text}</p>
-        </Link>
-      </li>
-    ))}
-  </StyledLinks>
-)
+const ContactLinks = () => {
+  const isEN = useIsEN()
+
+  return (
+    <StyledLinks>
+      {links.map(link => (
+        <li key={link.link}>
+          <a href={link.link}>
+            <link.Icon />
+            <p><strong>{(isEN && link.labelEN) ? link.labelEN : link.label}</strong><br/>{link.text}</p>
+          </a>
+        </li>
+      ))}
+    </StyledLinks>
+  )
+}
 
 export default ContactLinks
 

@@ -2,16 +2,21 @@ import React from 'react'
 import styled from 'styled-components'
 
 import { location } from '../data/footer-contact-links'
+import useIsEN from '../hooks/useIsEN'
 
-const ContactLocation = () => (
-  <StyledLocation>
-    <p>Aarzel niet om contact met ons op te nemen!</p>
-    <a target='_blank' rel="noopener noreferrer" href={location.link}>
-      <location.ContactIcon />
-      <location.ContactText />
-    </a>
-  </StyledLocation>
-)
+const ContactLocation = () => {
+  const isEN = useIsEN()
+
+  return (
+    <StyledLocation>
+      <p>{isEN ? 'Please do not hesitate to contact us!' : 'Aarzel niet om contact met ons op te nemen!'}</p>
+      <a target='_blank' rel="noopener noreferrer" href={location.link}>
+        <location.ContactIcon />
+        <location.ContactText isEN={isEN} />
+      </a>
+    </StyledLocation>
+  )
+}
 
 export default ContactLocation
 

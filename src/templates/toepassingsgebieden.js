@@ -8,12 +8,12 @@ import Columns from '../components/columns'
 
 import ApplicationList from '../custom/application-list'
 
-const IndexPage = ({ data, ...props }) => (
-  <Layout title='Toepassingsgebieden' {...props}>
+const IndexPage = ({ data, pageContext, ...props }) => (
+  <Layout title={pageContext.locale === 'nl' ? 'Toepassingen' : 'Applications'} pageContext={pageContext} {...props}>
     <Section>
       <Columns>
         <Markdown html={data.markdownRemark.html} />
-        <ApplicationList />
+        <ApplicationList isEN={pageContext.locale === 'en'} />
       </Columns>
     </Section>
   </Layout>
@@ -22,8 +22,8 @@ const IndexPage = ({ data, ...props }) => (
 export default IndexPage
 
 export const pageQuery = graphql`
-  query {
-    markdownRemark(fileAbsolutePath: { regex: "/toepassingsgebieden/" }) {
+  query($locale: String!) {
+    markdownRemark(fileAbsolutePath: { regex: "/toepassingsgebieden/" }, frontmatter: { locale: { eq: $locale } }) {
       html
     }
   }

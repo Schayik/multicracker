@@ -6,6 +6,7 @@ import Section from '../components/section'
 
 const Model = ({ data, ...props }) => (
   <Layout {...props}
+    modelData={data}
     title={data.markdownRemark.frontmatter.title}
     headerHeight='31.25rem'
   >
@@ -27,6 +28,9 @@ export const pageQuery = graphql`
       html
       frontmatter {
         path
+        pathEN
+        pathNL
+        locale
         title
         type
         model

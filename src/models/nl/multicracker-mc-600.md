@@ -1,8 +1,11 @@
 ---
-path: /modellen/multicracker-mc-600
 date: 2019-01-18
 title: Multicracker MC 600
 featuredImage: ../images/mc600.png
+
+locale: nl
+path: /modellen/multicracker-mc-600
+pathEN: /en/models/multicracker-mc-600
 
 type: mc
 model: 600

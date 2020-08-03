@@ -1,8 +1,11 @@
 ---
-path: /models/multicracker-mc-350
 date: 2019-01-18
 title: Multicracker MC 350
 featuredImage: ../images/mc350.png
+
+locale: en
+path: /en/models/multicracker-mc-350
+pathNL: /modellen/multicracker-mc-350
 
 type: mc
 model: 350
