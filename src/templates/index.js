@@ -34,7 +34,7 @@ const IndexPage = ({ data, ...props }) => {
         <Columns amount={3}>
           <StyledMarkdown as={Markdown} html={data.markdownRemark.html} />
           <BladeButton 
-            to={isEN ? '/en/areas-of-application' : '/toepassingsgebieden'}
+            to={isEN ? '/en/applications' : '/toepassingen'}
             label={isEN ? 'Applications' : 'Toepassingen'}
             Icon={ApplicationsIcon}
           />
