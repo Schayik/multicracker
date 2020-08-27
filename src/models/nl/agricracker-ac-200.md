@@ -5,7 +5,7 @@ featuredImage: ../images/ac200.png
 
 locale: nl
 path: /modellen/agricracker-ac-200
-pathEN: en/models/agricracker-ac-200
+pathEN: /en/models/agricracker-ac-200
 
 type: ac
 model: 200

@@ -10,7 +10,7 @@ const Modellen = ({ data, pageContext,  ...props }) => {
   const orderedModels = orderBy(data.allMarkdownRemark.edges, ['node.frontmatter.type', 'node.frontmatter.model'], ['desc', 'asc'])
 
   return (
-    <Layout title={pageContext ? 'Modellen' : 'Models'} pageContext={pageContext} {...props}>
+    <Layout title={pageContext.locale === 'nl' ? 'Modellen' : 'Models'} pageContext={pageContext} {...props}>
       <Section>
         <Models models={orderedModels} />
       </Section>

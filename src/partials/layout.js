@@ -10,6 +10,11 @@ import Footer from "./footer"
 import GlobalStyle from '../styles/global'
 import THEME from '../styles/theme'
 
+if (typeof window !== "undefined") {
+  // eslint-disable-next-line global-require
+  require("smooth-scroll")('a[href*="#"]')
+}
+
 const Layout = ({ children, title, isHome, location, CustomFlagText, pageContext, modelData }) => {
   console.log(location)
 

@@ -1,26 +1,23 @@
 import React from "react"
 import { graphql } from "gatsby"
 
+import Model from "../components/model"
 import Layout from "../partials/layout"
 import Section from '../components/section'
 
-const Model = ({ data, ...props }) => (
+const ModelPage = ({ data, ...props }) => (
   <Layout {...props}
     modelData={data}
     title={data.markdownRemark.frontmatter.title}
     headerHeight='31.25rem'
   >
     <Section>
-      {JSON.stringify(data)}
+      <Model data={data} />
     </Section>
-    {/* <Section>
-      <Markdown html={data.markdownRemark.html} />
-      <Buttons buttons={buttons} />
-    </Section> */}
   </Layout>
 )
 
-export default Model
+export default ModelPage
 
 export const pageQuery = graphql`
   query($path: String!) {
@@ -42,7 +39,7 @@ export const pageQuery = graphql`
         capacity
         featuredImage {
           childImageSharp {
-            fixed(width: 300) {
+            fixed(width: 520) {
               ...GatsbyImageSharpFixed
             }
           }

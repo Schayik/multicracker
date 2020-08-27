@@ -7,7 +7,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   html {
-    scroll-behavior: smooth;
+    /* scroll-behavior: smooth; */
     /* @media (max-width: ${p => p.theme.media.max}) {
       font-size: 90%;
     }

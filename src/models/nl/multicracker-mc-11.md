@@ -5,7 +5,7 @@ featuredImage: ../images/mc11.png
 
 locale: nl
 path: /modellen/multicracker-mc-11
-pathEN: en/models/multicracker-mc-11
+pathEN: /en/models/multicracker-mc-11
 
 type: mc
 model: 11
