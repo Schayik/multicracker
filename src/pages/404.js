@@ -8,11 +8,11 @@ import useIsEN from '../hooks/useIsEN'
 const htmlNL = '<p><strong>Error 404: Pagina niet gevonden</stong></p>'
 const htmlEN = '<p><strong>Error 404: Page not found</stong></p>'
 
-const NotFoundPage = () => {
+const NotFoundPage = props => {
   const isEN = useIsEN()
 
   return (
-    <Layout title={isEN ? "Page not found" : "Pagina niet gevonden"} >
+    <Layout title={isEN ? "Page not found" : "Pagina niet gevonden"} {...props}>
       <Section>
         <Markdown html={isEN ? htmlEN : htmlNL} />
       </Section>

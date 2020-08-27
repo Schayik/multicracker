@@ -33,8 +33,7 @@ const NavBar = ({ pathname, locale, pageKey, modelData }) => {
 
           <ul className='big navbar-list'>
             {Object.keys(pagesObject).map(linkKey => {
-              if (linkKey === 'home') return null
-              const { path, label } = pagesObject[linkKey][locale]
+              const { path, label } = pagesObject[linkKey][locale ? locale : 'nl']
               return (
                 <li key={linkKey} className={pathname === withPrefix(path) ? 'active' : ''}>
                   <Link to={path}>

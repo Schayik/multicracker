@@ -40,7 +40,7 @@ const Menu = ({ pathname, locale, pageKey, modelData }) => {
       <ul className={isOpen ? 'open' : 'closed'}>
       {Object.keys(pagesObject).map(linkKey => {
         if (linkKey === 'home') return null
-        const { path, label } = pagesObject[linkKey][locale]
+        const { path, label } = pagesObject[linkKey][locale ? locale : 'nl']
         return (
           <li key={linkKey} className={pathname === withPrefix(path) ? 'active' : ''}>
             <Link onClick={handleClick} to={path}>

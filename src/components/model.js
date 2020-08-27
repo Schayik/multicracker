@@ -12,8 +12,6 @@ const Model = ({ data }) => {
 
   const { length, width, height, weight, power, capacity, featuredImage } = data.markdownRemark.frontmatter
 
-  console.log(featuredImage)
-
   return (
     <StyledModel>
       <div className='image-wrapper'>

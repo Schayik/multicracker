@@ -16,8 +16,6 @@ if (typeof window !== "undefined") {
 }
 
 const Layout = ({ children, title, isHome, location, CustomFlagText, pageContext, modelData }) => {
-  console.log(location)
-
   const data = useStaticQuery(graphql`
     query {
       site {
