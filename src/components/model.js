@@ -10,7 +10,9 @@ import useIsEN from '../hooks/useIsEN'
 const Model = ({ data }) => {
   const isEN = useIsEN()
 
-  const { length, width, height, weight, power, capacity, featuredImage } = data.markdownRemark.frontmatter
+  const { length, width, height, weight, power, capacity, featuredImage, leaflet } = data.markdownRemark.frontmatter
+
+  console.log(leaflet)
 
   return (
     <StyledModel>
@@ -42,7 +44,11 @@ const Model = ({ data }) => {
             : <p>De capaciteit is <span>{capacity}</span>, afhankelijk van het product en gewenste deeltjesgrootte.</p>
           }
         </div>
-        </div>
+
+        {leaflet && <a href={leaflet.relativePath} download>
+          {isEN ? 'Download leaflet' : 'Download brochure'}
+        </a>}
+      </div>
     </StyledModel>
   )
 }
@@ -93,6 +99,16 @@ const StyledModel = styled.div`
       p {
         margin-left: 12px;
       }
+    }
+  }
+
+  a {
+    display: block;
+    margin-top: 1rem;
+    color: ${p => p.theme.colors.green};
+    text-decoration: underline;
+    &:hover {
+      color: ${p => p.theme.colors.greenHover};
     }
   }
 `

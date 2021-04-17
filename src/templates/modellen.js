@@ -1,4 +1,5 @@
 import React from "react"
+import styled from 'styled-components'
 import { graphql } from 'gatsby'
 import { orderBy } from 'lodash'
 
@@ -9,16 +10,27 @@ import Models from '../components/models'
 const Modellen = ({ data, pageContext,  ...props }) => {
   const orderedModels = orderBy(data.allMarkdownRemark.edges, ['node.frontmatter.type', 'node.frontmatter.model'], ['desc', 'asc'])
 
+  const ac = orderedModels.filter(({ node }) => node.frontmatter.type === 'ac')
+  const mc = orderedModels.filter(({ node }) => node.frontmatter.type === 'mc')
+
   return (
     <Layout title={pageContext.locale === 'nl' ? 'Modellen' : 'Models'} pageContext={pageContext} {...props}>
       <Section>
-        <Models models={orderedModels} />
+        <Models models={ac} />
+      </Section>
+      <StyledGap />
+      <Section>
+        <Models models={mc} />
       </Section>
     </Layout>
   )
 }
 
 export default Modellen
+
+const StyledGap = styled.div`
+  height: 3.75rem;
+`
 
 export const pageQuery = graphql`
   query($locale: String!) {

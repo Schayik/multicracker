@@ -3,49 +3,50 @@ import styled from 'styled-components'
 import { Link } from 'gatsby'
 import Img from 'gatsby-image'
 
-import Dimensions from '../icons/dimensions'
-import Power from '../icons/power'
-import Weight from '../icons/weight'
-import useIsEN from '../hooks/useIsEN'
+// import Dimensions from '../icons/dimensions'
+// import Power from '../icons/power'
+// import Weight from '../icons/weight'
+// import useIsEN from '../hooks/useIsEN'
 
 const Models = ({ models }) => {
-  const isEN = useIsEN()
+  // const isEN = useIsEN()
 
   return (
     <StyledModels>
       {models.map(({ node }) => {
-        const { type, path, title, length, width, height, weight, power, capacity, featuredImage } = node.frontmatter
+        // const { type, path, title, length, width, height, weight, power, capacity, featuredImage } = node.frontmatter
+        const { path, title, featuredImage } = node.frontmatter
 
-        if (type === 'ac') {
-          return (
-            <Link key={node.id} to={path} className='model double'>
-              <div className='inner'>
-                <div className='double-item left'>
-                  <Img fixed={featuredImage.childImageSharp.fixed} style={{ flex: 1, width: '100%', height: '100%' }} imgStyle={{ objectFit: 'contain' }} />
-                  <p className='name'>{title}</p>
-                </div>
-                <div className='double-item right'>
-                  <div className='property-wrapper'>
-                    <Dimensions />
-                    <p>{length} ({isEN ? 'length' : 'lengte'})<br/>{width} ({isEN ? 'width' : 'breedte'})<br/>{height} ({isEN ? 'height' : 'hoogte'})</p>
-                  </div>
-                  <div className='property-wrapper'>
-                    <Weight />
-                    <p>{weight}</p>
-                  </div>
-                  <div className='property-wrapper'>
-                    <Power />
-                    <p>{power}</p>
-                  </div>
-                  {isEN
-                    ? <p>The capacity is <span>{capacity}</span>, depending on the product and the desirable product size.</p>
-                    : <p>De capaciteit is <span>{capacity}</span>, afhankelijk van het product en gewenste deeltjesgrootte.</p>
-                  }
-                </div>
-              </div>
-            </Link>
-          )
-        } else {
+        // if (type === 'ac') {
+        //   return (
+        //     <Link key={node.id} to={path} className='model double'>
+        //       <div className='inner'>
+        //         <div className='double-item left'>
+        //           <Img fixed={featuredImage.childImageSharp.fixed} style={{ flex: 1, width: '100%', height: '100%' }} imgStyle={{ objectFit: 'contain' }} />
+        //           <p className='name'>{title}</p>
+        //         </div>
+        //         <div className='double-item right'>
+        //           <div className='property-wrapper'>
+        //             <Dimensions />
+        //             <p>{length} ({isEN ? 'length' : 'lengte'})<br/>{width} ({isEN ? 'width' : 'breedte'})<br/>{height} ({isEN ? 'height' : 'hoogte'})</p>
+        //           </div>
+        //           <div className='property-wrapper'>
+        //             <Weight />
+        //             <p>{weight}</p>
+        //           </div>
+        //           <div className='property-wrapper'>
+        //             <Power />
+        //             <p>{power}</p>
+        //           </div>
+        //           {isEN
+        //             ? <p>The capacity is <span>{capacity}</span>, depending on the product and the desirable product size.</p>
+        //             : <p>De capaciteit is <span>{capacity}</span>, afhankelijk van het product en gewenste deeltjesgrootte.</p>
+        //           }
+        //         </div>
+        //       </div>
+        //     </Link>
+        //   )
+        // } else {
           return (
             <Link key={node.id} to={path} className='model'>
               <div className='inner'>
@@ -54,7 +55,7 @@ const Models = ({ models }) => {
               </div>
             </Link>
           )
-        }
+        // }
       })}
     </StyledModels>
   )
@@ -162,18 +163,17 @@ const StyledModels = styled.div`
           flex-direction: column;
 
           .double-item {
-              &.left {
-                border-right: none;
-                border-bottom: 2px ${p => p.theme.colors.green} solid;
-                padding-right: 0;
-                padding-bottom: 24px;
-              }
+            &.left {
+              border-right: none;
+              border-bottom: 2px ${p => p.theme.colors.green} solid;
+              padding-right: 0;
+              padding-bottom: 24px;
+            }
 
-              &.right {
-                margin-top: 2.5rem;
-                flex-basis: 24px;
-                margin-left: 0;
-              }
+            &.right {
+              margin-top: 2.5rem;
+              flex-basis: 24px;
+              margin-left: 0;
             }
           }
         }

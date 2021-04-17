@@ -18,7 +18,7 @@ const CustomFlagText = (
 )
 
 const CustomFlagTextEN = (
-  <h1>Cutting edge technology which retains<br />both product structure and quality</h1>
+  <h1>Cutting edge technology which retains<br />product structure and quality</h1>
 )
 
 const IndexPage = ({ data, ...props }) => {

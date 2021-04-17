@@ -88,7 +88,9 @@ const StyledNavBar = styled.nav`
 
   .divider {
     margin-left: 2rem;
-    border: 1px solid ${p => p.theme.colors.black};
+    /* border: 1px solid ${p => p.theme.colors.black}; */
+    background-color: ${p => p.theme.colors.black};
+    width: 2px;
   }
 
   a.logo .image {
