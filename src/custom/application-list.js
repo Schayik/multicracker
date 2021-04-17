@@ -11,22 +11,22 @@ const applicationsNL = [
   {
     "label": "Granen",
     Icon: CerealIcon,
-    "list": ["Maïs", "Tarwe", "Haver", "Gerst (ook voor de bierbrouwende industrie!)"]
+    "list": ["Maïs", "Tarwe", "Haver", "Gerst (ook voor de bierbrouwende industrie)"]
   },
   {
     "label": "Oliehoudende zaden",
     Icon: SeedIcon,
-    "list": ["Lijnzaad", "Koolzaad"]
+    "list": ["Lijnzaad", "Koolzaad", "Raapzaad", "Hennepzaad", "Mosterdzaad"]
   },
   {
     "label": "Peulvruchten",
     Icon: LegumelIcon,
-    "list": ["Soja", "Bonen (waaronder veldbonen)", "Erwten"]
+    "list": ["Sojabonen", "Voerbonen", "Erwten", "Pinda's", "Kastanjes", "Noten"]
   },
   {
     "label": "Overige",
     Icon: EtceteraIcon,
-    "list": ["Left-overs van vis", "Pellets", "Groenten en fruit", "Zonnepitschroot"],
+    "list": ["Korrels", "Groenten en fruit", "Zonnepitschroot", "Ureum", "Cacao", "Specerijen", "Zout", "Insecten"],
     // "extra": "Ook het verkruimelen van uw brok levert een prachtig resultaat!"
   }
 ]
@@ -40,17 +40,17 @@ const applicationsEN = [
   {
     "label": "Oilseeds",
     Icon: SeedIcon,
-    "list": ["Linseed", "Rapeseed"]
+    "list": ["Linseed", "Rapeseed", "Hemp seed", "Mustard seed"]
   },
   {
-    "label": "Legumes",
+    "label": "Pulses",
     Icon: LegumelIcon,
-    "list": ["Soy", "Beans (including field beans)", "Peas"]
+    "list": ["Soybeans", "Beans for animal fodder", "Peas", "Peanuts", "Chestnut", "Nuts"]
   },
   {
     "label": "Other",
     Icon: EtceteraIcon,
-    "list": ["Fish scraps", "Pellets", "Fruit and vegetables", "Sunflower seed residues"],
+    "list": ["Pellets", "Fruit and vegetables", "Sunflower seed residues", "Urea", "Cacao", "Spices", "Salt", "Insects"],
     // "extra": "Ook het verkruimelen van uw brok levert een prachtig resultaat!"
   }
 ]

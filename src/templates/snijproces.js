@@ -9,7 +9,7 @@ import Columns from '../components/columns'
 import Images from '../custom/snijproces-images'
 
 const IndexPage = ({ data, pageContext, ...props }) => (
-  <Layout title={pageContext.locale === 'nl' ? 'Snijproces' : 'Process'} pageContext={pageContext} {...props}>
+  <Layout title={pageContext.locale === 'nl' ? 'Maalproces' : 'Milling Process'} pageContext={pageContext} {...props}>
     <Section>
       <Columns>
         <div>

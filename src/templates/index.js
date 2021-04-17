@@ -14,7 +14,7 @@ import ApplicationsIcon from '../icons/applications'
 import ModelsIcon from '../icons/models'
 
 const CustomFlagText = (
-  <h1>Fijn snijden terwijl de structuur en<br />scherpte worden behouden</h1>
+  <h1>Vermalen terwijl de structuur en<br />scherpte worden behouden</h1>
 )
 
 const CustomFlagTextEN = (

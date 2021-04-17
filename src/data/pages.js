@@ -7,11 +7,11 @@ const pagesObject = {
     nl: { path: '/toepassingen', label: 'Toepassingen' }, 
     en: { path: '/en/applications', label: 'Applications' },
   },
-  models: { 
-    nl: { path: '/snijproces', label: 'Snijproces' },
-    en: { path: '/en/process', label: 'Process' },
+  process: { 
+    nl: { path: '/maalproces', label: 'Maalproces' },
+    en: { path: '/en/milling-process', label: 'Milling Process' },
   },
-  snijprocess: { 
+  models: { 
     nl: { path: '/modellen', label: 'Modellen' },
     en: { path: '/en/models', label: 'Models' },
   },

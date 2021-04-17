@@ -10,11 +10,11 @@ pathNL: /modellen/multicracker-mc-11
 type: mc
 model: 11
 
-length: 1070 cm 
-width: 475 cm
-height: 400 cm
-weight: 225 kg
-power: 5,5 kW
-capacity: 0 - 3 ton / uur
+length: 1090 mm 
+width: 810 mm
+height: 827 mm
+weight: 560 kg
+power: 2x 5.5 kW
+capacity: 0 - 6 ton / uur
 ---
 Multicracker MC 11

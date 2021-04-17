@@ -17,6 +17,6 @@ weight: 225 kg
 power: 5,5 kW
 capacity: 0 - 3 ton / uur
 
-leaflet: ../images/ac100.png
+leaflet: ../leaflets/Datasheet AC100 Multicracker Benelux NL.pdf
 ---
 Agricracker AC 100

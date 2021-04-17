@@ -10,11 +10,11 @@ pathNL: /modellen/multicracker-mc-350
 type: mc
 model: 350
 
-length: 1070 cm 
-width: 475 cm
-height: 400 cm
-weight: 225 kg
-power: 5,5 kW
-capacity: 0 - 3 ton / uur
+length: 1700 mm 
+width: 1255 mm
+height: 840 mm
+weight: 1100 kg
+power: 30 kW
+capacity: 0 - 30 ton / uur
 ---
 Multicracker MC 350

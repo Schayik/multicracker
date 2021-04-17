@@ -10,11 +10,11 @@ pathEN: /en/models/multicracker-mc-370
 type: mc
 model: 370
 
-length: 1070 cm 
-width: 475 cm
-height: 400 cm
-weight: 225 kg
-power: 5,5 kW
-capacity: 0 - 3 ton / uur
+length: 1638 mm
+width: 1547 mm
+height: 835 mm
+weight: 1300 kg
+power: 2x 18,5 kW
+capacity: 0 - 37 ton / uur
 ---
 Multicracker MC 370

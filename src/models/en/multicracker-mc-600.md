@@ -10,11 +10,11 @@ pathNL: /modellen/multicracker-mc-600
 type: mc
 model: 600
 
-length: 1070 cm 
-width: 475 cm
-height: 400 cm
-weight: 225 kg
-power: 5,5 kW
-capacity: 0 - 3 ton / uur
+length: 2000 mm
+width: 1547 mm
+height: 835 mm
+weight: 3900 kg
+power: 2x 30 kW
+capacity: 0 - 80 ton / uur
 ---
 Multicracker MC 600

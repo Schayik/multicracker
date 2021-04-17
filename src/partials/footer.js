@@ -5,6 +5,8 @@ import CompressWrapper from '../components/compress-wrapper'
 import AbsImg from '../components/absolute-image'
 import useIsEN from '../hooks/useIsEN'
 
+import MailIcon from '../icons/mail'
+
 import { links, location } from '../data/footer-contact-links'
 
 const Footer = ({ fluid }) => {
@@ -20,9 +22,14 @@ const Footer = ({ fluid }) => {
             <a key={link.link} href={link.link} target='_blank' rel="noopener noreferrer">
               <Shape isFilled />
               <link.Icon className='icon' />
-              <p><strong>{(isEN && link.labelEN) ? link.labelEN : link.label}</strong><br />{link.text}</p>
+              <p className={link.small ? "small" : null}><strong>{(isEN && link.labelEN) ? link.labelEN : link.label}</strong><br />{link.text}</p>
             </a>
           ))}
+          <a href="mailto:info@multicrackerbenelux.com" target='_blank' rel="noopener noreferrer">
+            <Shape isFilled />
+            <MailIcon className='icon' />
+            <p><strong>E-mail</strong><br /><span class="small">info@multicrackerbenelux.com</span></p>
+          </a>
           <a className='open' target='_blank' rel="noopener noreferrer" href={location.link}>
             <Shape />
             <location.FooterIcon className='icon' />
@@ -100,6 +107,9 @@ const StyledFooter = styled.footer`
     font-size: 1rem;
     margin-left: 1.25rem;
     word-break: break-all;
+  }
+  .content a p span.small {
+    font-size: .925rem;
   }
   .content a svg.background {
     position: absolute;

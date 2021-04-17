@@ -1,8 +1,8 @@
 ---
 locale: nl
 ---
-De MULTICRACKER® is een compacte machine waarmee producten kunnen worden verkleind. Bij dit proces wordt het beginproduct gecrackt (gebroken) in plaats van gemalen.<br/>
+De MULTICRACKER® is een compacte machine waarmee producten worden verkleind. Bij dit proces wordt het beginproduct gecrackt (gebroken) in plaats van gemalen.<br/>
 <br/>
-In de machine zitten speciale gepatenteerde crackschijven die het product onder hoge snelheid tot de gewenste grootte verkleind. Met de messen maakt de MULTICRACKER® een snijdende beweging die vergelijkbaar is met het effect van een schaar. Door dit innovatieve snijproces en de optimale snijgeometrie kan het product snel worden verkleind tot de vooraf ingestelde grootte.<br/>
+In de machine zitten gepatenteerde crackschijven die het product onder hoge snelheid tot de gewenste deeltjesgrootte verkleind. Met de schijven maakt de MULTICRACKER® een snijdende beweging die vergelijkbaar is met het effect van een schaar. Door dit innovatieve snijproces en de optimale snijgeometrie kan het product snel worden verkleind tot de vooraf ingestelde grootte met een minimaal stofaandeel.<br/>
 <br/>
-In de afbeeldingen hieronder zie je dan het snijvlak van een MULTICRACKER® 3x groter is dan het snijvlak van een even grote walsmolen. Hierdoor is de stroomsnelheid 3x zo groot en komt de stroomsnelheid overeen met een walsmolen die 3x zo groot is.
+In de afbeeldingen hieronder is te zien dat het snijvlak van een MULTICRACKER®  driemaal groter is dan het snijvlak van een even grote walsenstoel. Hierdoor is capaciteit aanzienlijk groter ten opzichte van een walsenstoel.
