@@ -16,5 +16,7 @@ height: 840 mm
 weight: 1100 kg
 power: 30 kW
 capacity: 0 - 30 ton / uur
+
+leaflet: ../leaflets/Datasheet Multicracker MC350.pdf
 ---
 Multicracker MC 350

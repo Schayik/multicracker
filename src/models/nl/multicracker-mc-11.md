@@ -16,5 +16,7 @@ height: 827 mm
 weight: 560 kg
 power: 2x 5,5 kW
 capacity: 0 - 6 ton / uur
+
+leaflet: ../leaflets/Datasheet Multicracker MC11.pdf
 ---
 Multicracker MC 11

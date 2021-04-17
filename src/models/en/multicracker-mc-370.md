@@ -16,5 +16,7 @@ height: 835 mm
 weight: 1300 kg
 power: 2x 18.5 kW
 capacity: 0 - 37 ton / uur
+
+leaflet: ../leaflets/Datasheet Multicracker MC370.pdf
 ---
 Multicracker MC 370

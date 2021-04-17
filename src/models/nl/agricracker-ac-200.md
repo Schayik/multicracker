@@ -16,5 +16,7 @@ height: 520 cm
 weight: 365 kg
 power: 5,5 kW / 7,5 kW / 9 kW / 11 kW
 capacity: 0 - 8 ton / uur
+
+leaflet: ../leaflets/Datasheet AC200 Multicracker Benelux NL.pdf
 ---
 Agricracker AC 200

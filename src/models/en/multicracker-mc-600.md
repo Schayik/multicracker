@@ -16,5 +16,7 @@ height: 835 mm
 weight: 3900 kg
 power: 2x 30 kW
 capacity: 0 - 80 ton / uur
+
+leaflet: ../leaflets/Datasheet Multicracker MC600.pdf
 ---
 Multicracker MC 600

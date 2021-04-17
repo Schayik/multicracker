@@ -12,8 +12,6 @@ const Model = ({ data }) => {
 
   const { length, width, height, weight, power, capacity, featuredImage, leaflet } = data.markdownRemark.frontmatter
 
-  console.log(leaflet)
-
   return (
     <StyledModel>
       <div className='image-wrapper'>
@@ -45,7 +43,7 @@ const Model = ({ data }) => {
           }
         </div>
 
-        {leaflet && <a href={leaflet.relativePath} download>
+        {leaflet && <a href={leaflet.publicURL} download>
           {isEN ? 'Download leaflet' : 'Download brochure'}
         </a>}
       </div>

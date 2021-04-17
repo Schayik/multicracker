@@ -11,7 +11,6 @@ const ModelPage = ({ data, ...props }) => (
     title={data.markdownRemark.frontmatter.title}
     headerHeight='31.25rem'
   >
-    {console.log(data)}
     <Section>
       <Model data={data} />
     </Section>
@@ -39,7 +38,7 @@ export const pageQuery = graphql`
         power
         capacity
         leaflet {
-          relativePath
+          publicURL
         }
         featuredImage {
           childImageSharp {

@@ -16,5 +16,7 @@ height: 835 mm
 weight: 1300 kg
 power: 2x 15 kW
 capacity: 0 - 30 ton / uur
+
+leaflet: ../leaflets/Datasheet Multicracker MC300.pdf
 ---
 Multicracker MC 11
