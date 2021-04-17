@@ -6,6 +6,9 @@ import MenuIcon from '../icons/menu'
 import pagesObject from '../data/pages'
 import useOutsideAlerter from '../hooks/useOutsideAlerter'
 
+import Netherlands from '../icons/netherlands'
+import UnitedKingdom from '../icons/united-kingdom'
+
 const Menu = ({ pathname, locale, pageKey, modelData }) => {
 
   const [isOpen, setOpen] = useState(false)
@@ -51,21 +54,23 @@ const Menu = ({ pathname, locale, pageKey, modelData }) => {
       })}
         <div className='menu-divider' />
         {locale === 'en' && 
-          <li>
+          <li className='language'>
             <Link 
               onClick={handleClick} 
               to={modelData ? modelData.markdownRemark.frontmatter.pathNL : pagesObject[pageKey].nl.path}
             >
+              <Netherlands className='flag' />
               Nederlands
             </Link>
           </li>
         }
         {locale === 'nl' && 
-          <li>
+          <li className='language'>
             <Link
               onClick={handleClick}
               to={modelData ? modelData.markdownRemark.frontmatter.pathEN : pagesObject[pageKey].en.path}
             >
+              <UnitedKingdom className='flag' />
               English
             </Link>
           </li>
@@ -138,6 +143,18 @@ const StyledMenu = styled.div`
         :hover {
           opacity: .7;
         }
+      }
+    }
+
+    li.language a {
+      display: flex;
+      align-items: center;
+
+      font-size: 1rem;
+      line-height: 16px;
+
+      .flag {
+        margin-right: 8px;
       }
     }
   }

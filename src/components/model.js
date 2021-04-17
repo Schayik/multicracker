@@ -44,7 +44,7 @@ const Model = ({ data }) => {
         </div>
 
         {leaflet && <a href={leaflet.publicURL} download>
-          {isEN ? 'Download leaflet' : 'Download brochure'}
+          Download datasheet
         </a>}
       </div>
     </StyledModel>

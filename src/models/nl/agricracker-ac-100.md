@@ -10,10 +10,10 @@ pathEN: /en/models/agricracker-ac-100
 type: ac
 model: 100
 
-length: 1070 cm 
-width: 475 cm
-height: 400 cm
-weight: 225 kg
+length: 1070 mm 
+width: 475 mm
+height: 400 mm
+weight: 200 kg
 power: 5,5 kW
 capacity: 0 - 3 ton / uur
 

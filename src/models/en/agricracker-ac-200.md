@@ -10,11 +10,11 @@ pathNL: /modellen/agricracker-ac-200
 type: ac
 model: 200
 
-length: 1080 cm 
-width: 735 cm
-height: 520 cm
-weight: 365 kg
-power: 5,5 kW / 7,5 kW / 9 kW / 11 kW
+length: 1080 mm 
+width: 735 mm
+height: 520 mm
+weight: 400 kg
+power: 5.5 / 7.5 / 11 kW
 capacity: 0 - 8 ton / uur
 
 leaflet: ../leaflets/Datasheet AC200 Multicracker Benelux EN.pdf

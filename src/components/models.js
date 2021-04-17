@@ -50,7 +50,12 @@ const Models = ({ models }) => {
           return (
             <Link key={node.id} to={path} className='model'>
               <div className='inner'>
-                <Img fixed={featuredImage.childImageSharp.fixed} style={{ flex: 1, width: '100%', height: '100%' }} imgStyle={{ objectFit: 'contain' }} />
+                <Img 
+                  fixed={featuredImage.childImageSharp.fixed}
+                  style={{ flex: 1, width: '100%', height: '100%' }}
+                  imgStyle={{ objectFit: 'contain' }}
+                  className="image"
+                />
                 <p className='name'>{title}</p>
               </div>
             </Link>
@@ -82,6 +87,13 @@ const StyledModels = styled.div`
     width: 100%;
     padding-bottom: 100%;
     position: relative;
+
+    .inner .image {
+      transition: transform .3s
+    }
+    &:hover .inner .image {
+      transform: scale(1.1)
+    }
 
     .inner {
       position: absolute;

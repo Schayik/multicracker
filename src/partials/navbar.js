@@ -6,6 +6,8 @@ import { Link, useStaticQuery, graphql, withPrefix } from "gatsby"
 import Menu from './menu'
 import CompressWrapper from '../components/compress-wrapper'
 import pagesObject from '../data/pages'
+import Netherlands from '../icons/netherlands'
+import UnitedKingdom from '../icons/united-kingdom'
 
 const NavBar = ({ pathname, locale, pageKey, modelData }) => {
   const data = useStaticQuery(graphql`
@@ -44,16 +46,18 @@ const NavBar = ({ pathname, locale, pageKey, modelData }) => {
             })}
             <div className='divider' />
             {locale === 'en' && 
-              <li>
+              <li className='language'>
                 <Link to={modelData ? modelData.markdownRemark.frontmatter.pathNL : pagesObject[pageKey].nl.path}>
                   Nederlands
+                  <Netherlands className='flag' />
                 </Link>
               </li>
             }
             {locale === 'nl' && 
-              <li>
+              <li className='language'>
                 <Link to={modelData ? modelData.markdownRemark.frontmatter.pathEN : pagesObject[pageKey].en.path}>
                   English
+                  <UnitedKingdom className='flag' />
                 </Link>
               </li>
             }            
@@ -110,6 +114,23 @@ const StyledNavBar = styled.nav`
         &:hover { color: ${p => p.theme.colors.greenHover}; }
       }
       &.active a { color: ${p => p.theme.colors.green}; }
+    }           
+  }
+
+  ul.navbar-list li.language {
+    display: flex;
+    align-items: center;
+
+    a {
+      display: flex;
+      align-items: center;
+
+      font-size: 1rem;
+      line-height: 16px;
+
+      .flag {
+        margin-left: 8px;
+      }
     }           
   }
 
