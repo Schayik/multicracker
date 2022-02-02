@@ -6,7 +6,7 @@ module.exports = {
     author: `Rick Janssen Bouwmeester`,
     meta: [
       { name: "msapplication-TileColor", content: "#129c51" },
-      { name: "theme-color", content: "#ff0000" },
+      { name: "theme-color", content: "#129c51" },
     ],
     lang: 'nl'
   },
