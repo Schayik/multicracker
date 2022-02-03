@@ -8,11 +8,11 @@ module.exports = {
       { name: "msapplication-TileColor", content: "#129c51" },
       { name: "theme-color", content: "#129c51" },
     ],
-    lang: 'nl'
+    lang: "nl",
   },
   plugins: [
     `gatsby-plugin-styled-components`,
-    `gatsby-plugin-react-helmet`,    
+    `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
     `gatsby-transformer-remark`,
@@ -56,14 +56,14 @@ module.exports = {
         name: `Multicracker Benelux`,
         short_name: `Multicracker`,
         start_url: `/`,
-        theme_color: "#ff0000",
+        theme_color: "#129c51",
         background_color: "#129c51",
         display: "standalone",
         icon: `src/icons/favicon.png`, // This path is relative to the root of the site.
         lang: `nl`,
-      }
+      },
     },
-    `gatsby-plugin-offline`
+    `gatsby-plugin-offline`,
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
